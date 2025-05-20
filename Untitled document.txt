@@ -1,0 +1,113 @@
+﻿```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JAAT CLUB - Color Game</title>
+  <style>
+    body {
+      background-color: #121212;
+      color: white;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      text-align: center;
+      margin-top: 50px;
+    }
+    h1 {
+      font-size: 36px;
+    }
+    .color-box {
+      width: 100px;
+      height: 100px;
+      display: inline-block;
+      margin: 20px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    .game-info {
+      font-size: 18px;
+    }
+    .score {
+      font-size: 24px;
+      margin-top: 20px;
+    }
+    .button {
+      background-color: #00bfff;
+      padding: 10px 20px;
+      border: none;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 5px;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+
+
+  <div class="container">
+[5/20, 3:59 PM] Chat Gtp: <h1>Welcome to JAAT CLUB</h1>
+    <p class="game-info">Select the correct trending color to score points!</p>
+
+
+    <div id="color-boxes">
+      <div class="color-box" style="background-color: #FF5733;" onclick="checkColor('#FF5733')"></div>
+      <div class="color-box" style="background-color: #33FF57;" onclick="checkColor('#33FF57')"></div>
+      <div class="color-box" style="background-color: #5733FF;" onclick="checkColor('#5733FF')"></div>
+      <div class="color-box" style="background-color: #FFFF33;" onclick="checkColor('#FFFF33')"></div>
+    </div>
+
+
+    <p class="game-info">Choose the correct trending color!</p>
+    <div class="score">
+      Score: <span id="score">0</span>
+    </div>
+
+
+    <button class="button" onclick="startNewGame()">Start New Game</button>
+  </div>
+
+
+  <script>
+    let score = 0;
+    let correctColor = '#33FF57'; // This can be changed based on the "trending" color.
+
+
+    function checkColor(selectedColor) {
+      if (selectedColor === correctColor) {
+        score++;
+        alert("Correct! You scored a point.");
+      } else {
+        alert("Wrong! Try again.");
+      }
+      updateScore();
+    }
+
+
+    function updateScore() {
+      document.getElementById("score").textContent = score;
+    }
+
+
+    function startNewGame() {
+      score = 0;
+[5/20, 3:59 PM] Chat Gtp: correctColor = getRandomColor(); // Randomly choose a color each time.
+      updateScore();
+    }
+
+
+    function getRandomColor() {
+      const colors = ['#FF5733', '#33FF57', '#5733FF', '#FFFF33'];
+      return colors[Math.floor(Math.random() * colors.length)];
+    }
+  </script>
+
+
+</body>
+</html>
+```
